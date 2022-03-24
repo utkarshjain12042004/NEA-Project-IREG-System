@@ -1,0 +1,5 @@
+Student_ID,First_Name,Last_Name,Time_Of_Attendance,Date_Of_Attendance,Attendance_Status
+1,Utkarsh,Jain,12:34:18,11/03/2022,Present
+2,Avisha,Porwal,12:34:24,11/03/2022,Absent
+3,Hitarth,Porwal,12:34:24,11/03/2022,Absent
+4,Tanisha,Jain,12:34:24,11/03/2022,Absent

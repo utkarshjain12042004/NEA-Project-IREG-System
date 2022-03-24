@@ -8,7 +8,7 @@ class IREG_Main_Menu:
         self.root = root
         # Setting the dimensions of the window and the point where the window is displayed from
         self.root.geometry("1280x760+0+0")
-        # Setting the property of resizing the widow to false
+        # Setting the property of resizing the window to false
         self.root.resizable(width=False, height=False)
         self.root.title("IREG")
 
@@ -45,8 +45,12 @@ class IREG_Main_Menu:
         exit_Button = Button(Button_Frame, text="Exit", cursor="hand2", font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
         exit_Button.place(x=5,y=261, width=387, height=50) # Specifying the coordinates along with the dimensions of the frame
 
-
-
+    # ===================================================================================== #
+    # Adding in the functions which call other pages
+    #def Start_Attendance_Button_Implementation(self):
+    #    self.new_window = Toplevel(self.root) # Creating an instance of a toplevel
+    #    self.app = Start_Attendance(self.new_window)
+    #    self.root.withdraw() # Deleting the current window
 
 # This piece of code helps in calling class Face_Recognition_System
 if __name__=="__main__":

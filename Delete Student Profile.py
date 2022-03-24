@@ -15,7 +15,7 @@ class Update_Student_Profile:
     def __init__(self, root):
         self.root = root
         # Setting the dimensions of the window and the point where the window is displayed from
-        self.root.geometry("1280x760+0+0")
+        self.root.geometry("1280x760+0+0")                                                
         # Setting the property of resizing the window to false
         self.root.resizable(width=False, height=False)
         self.root.title("IREG")
@@ -25,8 +25,8 @@ class Update_Student_Profile:
         mainFrame.place(x=2, y=2, width=1276, height=755) # Specifying the coordinates along with the dimensions of the frame
 
         # Label Frame
-        Update_Student_Profile_lbl= Label(mainFrame, text="Update Student Profile", font=("Segoe UI Variable", 45, "bold"), bg="White", fg="Black")
-        Update_Student_Profile_lbl.place(x=1, y=5, width=1270, height=75) # Specifying the coordinates along with the dimensions of the frame
+        Delete_Student_Profile_lbl= Label(mainFrame, text="Delete Student Profile", font=("Segoe UI Variable", 45, "bold"), bg="White", fg="Black")
+        Delete_Student_Profile_lbl.place(x=1, y=5, width=1270, height=75) # Specifying the coordinates along with the dimensions of the frame
 
         # Variables related to the students
         self.var_student_ID = IntVar()
@@ -48,14 +48,14 @@ class Update_Student_Profile:
         self.var_search_by_combobox = StringVar()
         self.var_search = StringVar()
 
-        # Button Frame
+         # Button Frame
         Button_Frame= Frame(mainFrame, bd=2, bg="White", relief=RIDGE)
-        Button_Frame.place(x=885, y=460, width=380, height=290) # Specifying the coordinates along with the dimensions of the frame
+        Button_Frame.place(x=885, y=150, width=380, height=220) # Specifying the coordinates along with the dimensions of the frame
 
         # ======================================================================================================================================== #
         # Student Information frame: This frame will contain all the fields asking for information related to the student
         Student_Information_Frame= LabelFrame(mainFrame, bd=2, bg="White", relief=RIDGE, text="Student Details", font=("Segoe UI Variable", 12, "bold"))
-        Student_Information_Frame.place(x=5, y=85, width=826, height=200)
+        Student_Information_Frame.place(x=5, y=85, width=875, height=200)
         # =================================================================== #
         # Adding in the student related text boxes and labels
         # Adding a student id label and textbox
@@ -138,33 +138,24 @@ class Update_Student_Profile:
         mother_email_textbox = ttk.Entry(Parent_Information_Frame, width=25, font=("Segoe UI Variable", 12, "bold"), textvariable=self.var_mother_email)
         mother_email_textbox.grid(row=2, column=3, padx=5, pady=15, sticky=W) # Specifying the coordinates of the textbox
 
-        # ======================================================================================================================================== #
-        # Capture Student Face Frame: This frame will be blank in the beginning but after the user clicks on the capture 
-        # student face button, the live video footage will be embedded in the frame
-        Capture_Student_Face_Frame= LabelFrame(mainFrame, bd=2, bg="White", relief=RIDGE, text="Capture Student Face", font=("Segoe UI Variable", 12, "bold"))
-        Capture_Student_Face_Frame.place(x=835, y=85, width=430, height=365) # Specifying the coordinates along with the dimensions of the frame
-
         #======================================== Adding in the buttons ========================================#
-        # Add New Student Profile Button
-        update_student_Button = Button(Button_Frame, text="Update Student Profile", cursor="hand2", command = self.update_student_button, font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
-        update_student_Button.place(x=5, y=5, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
-
-        # Capture Student Face
-        capture_student_face_Button =  Button(Button_Frame, text="Capture Student Face", cursor="hand2", command = self.capture_face_button, font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
-        capture_student_face_Button.place(x=5, y=75, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
+        # Adding in the buttons to the button frame
+        # Add New teacher Profile Button
+        delete_student_profile_Button = Button(Button_Frame, text="Delete Student Profile", cursor="hand2", command=self.delete_student_button, font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
+        delete_student_profile_Button.place(x=5, y=5, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
 
         # Clear All Fields Button
-        clear_all_fields_Button = Button(Button_Frame, text="Clear All Fields", cursor="hand2", command = self.clear_all_button, font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
-        clear_all_fields_Button.place(x=5, y=145, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
+        clear_all_fields_Button = Button(Button_Frame, text="Clear All Fields", cursor="hand2", command=self.clear_all_button, font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
+        clear_all_fields_Button.place(x=5, y=75, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
        
-        # Back to Student Account Management Button
+        # Back to teacher Account Management Button
         back_to_student_account_management_Button = Button(Button_Frame, text="Back to Previous Page", cursor="hand2", font=("Segoe UI Variable", 15, "bold"), bg="Black", fg="White")
-        back_to_student_account_management_Button.place(x=5, y=216, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
+        back_to_student_account_management_Button.place(x=5, y=145, height=65, width=365) # Specifying the coordinates along with the dimensions of the button
 
         # ======================================================================================================================================== #
         # Search Frame: This frame will contain the search system which will be show the user all the student profiles created
         Search_Frame= Frame(mainFrame, bd=2, bg="White", relief=RIDGE)
-        Search_Frame.place(x=5, y=460, width=875, height=285)
+        Search_Frame.place(x=5, y=460, width=1260, height=285)
 
         # Adding a search bar
         search_label = Label(Search_Frame, text="Search By:", font=("Segoe UI Variable", 12, "bold"), bg="White", fg="Black")
@@ -190,7 +181,7 @@ class Update_Student_Profile:
 #============================================================================================================================================================================================================
         # Table Frame
         Table_Frame= Frame(Search_Frame, bd=2, bg="White", relief=RIDGE)
-        Table_Frame.place(x=0, y=45, width=870, height=235)
+        Table_Frame.place(x=0, y=45, width=1256, height=235)
 
         # Scroll Bar
         scroll_x = ttk.Scrollbar(Table_Frame, orient=HORIZONTAL)
@@ -205,7 +196,6 @@ class Update_Student_Profile:
         scroll_x.config(command=self.student_table.xview)
         scroll_y.config(command=self.student_table.yview)
 
-        # Assigning the table headings to the heading variables created in the previous lines
         self.student_table.heading("std_ID", text="Student ID")
         self.student_table.heading("first_name", text="First Name")
         self.student_table.heading("last_name", text="Last Name")
@@ -217,15 +207,14 @@ class Update_Student_Profile:
         self.student_table.heading("mother_name", text="Mother's Name")
         self.student_table.heading("mother_email", text="Mother Email")
         self.student_table["show"] = "headings"
-
-        # Setting the width of the columns
+        
         self.student_table.column("std_ID", width=68)
         self.student_table.column("first_name", width=130)
         self.student_table.column("last_name", width=130)
         self.student_table.column("email", width=130)
         self.student_table.column("date_of_admission", width=120)
         self.student_table.column("date_of_birth", width=120)
-        self.student_table.column("father_name", width=130)
+        self.student_table.column("father_name", width=130) 
         self.student_table.column("father_email", width=150)
         self.student_table.column("mother_name", width=130)
         self.student_table.column("mother_email", width=100)
@@ -239,45 +228,30 @@ class Update_Student_Profile:
 #===========================================================================================================================================#
 #                                                      BUTTON IMPLEMENTATION FUNCTIONS
 # ------------------------------------------------------------------------------------------------------------------------------------------#
-# ------------------------------------------------------------------------------------------------------------------------------------------#
-    # Update button implementation
-    def update_student_button(self):
-    # Validating if the user has entered in all the details asked for on the Update Student Profile page
-        if self.var_student_email.get()=="" or self.var_first_name.get()=="" or self.var_last_name.get()=="" or self.var_date_of_admission.get()=="" or self.var_date_of_birth.get()=="" or self.var_father_name.get()=="" or self.var_father_email.get()=="" or self.var_mother_name.get()=="" or self.var_mother_email.get()=="":
-            messagebox.showerror("Error", "All fields are required", parent=self.root)
-            # Send an error message to the user if details are not completely filled
+    # Delete Button Implementation
+    def delete_student_button(self):
+        if self.var_student_ID==None:
+            messagebox.showerror("Error", "Student ID required.", parent=self.root)
         else:
-            # Adding a try except block inorder to prevent the system from stop functioning completely incase of an error
             try:
-                # Asks the user if they want to update the selected profile
-                update = messagebox.askyesno("Update Student Account", "Do you want to update student details?", parent=self.root)
-                if update > 0:
-                # If the user click yes, the change will be made in the database
+                delete = messagebox.askyesno("Delete Student Account", "Do you want to delete student account?", parent=self.root)
+                if delete > 0:
                     conn = mysql.connector.connect(host="localhost", username="root", password="utkarshjain120", database="mydb")
                     my_cursor = conn.cursor()
-                    # Update student information SQL Query
-                    my_cursor.execute("UPDATE tbl_student SET First_Name=%s, Last_Name=%s, Email=%s, date_of_admission=%s, Date_Of_Birth=%s, Father_Name=%s, Father_Email=%s, Mother_Name=%s, Mother_Email=%s WHERE Student_ID=%s",(
-                                                                            self.var_first_name.get(), 
-                                                                            self.var_last_name.get(), 
-                                                                            self.var_student_email.get(),
-                                                                            self.var_date_of_admission.get(), 
-                                                                            self.var_date_of_birth.get(),
-                                                                            self.var_father_name.get(), 
-                                                                            self.var_father_email.get(), 
-                                                                            self.var_mother_name.get(),
-                                                                            self.var_mother_email.get(), 
-                                                                            self.var_student_ID[0]))
+                    # my_cursor.execute("DELETE FROM tbl_student WHERE Student_ID=%s", (self.var_student_ID.get()))
+                    sql_query = "DELETE FROM tbl_student WHERE Student_ID=%s"
+                    values = (self.var_student_ID,)
+
+                    my_cursor.execute(sql_query, self.var_student_ID)
                 else:
-                    # If not, the changes are not made
-                    if not update:
+                    if not delete:
                         return
-                messagebox.showinfo("Success", "Student details have been successfully updated.", parent=self.root) # Printing a success message
-                conn.commit() # Making the changes in the database
-                self.fetch_data() # Reflecting the change in the table on this page
-                conn.close() # Closing the database connection 
-                self.clear_all_button() # Clearing all the data peasant in the textboxes
+                conn.commit()
+                self.fetch_data()
+                conn.close()
+                self.clear_all_button()
+                messagebox.showinfo("Delete Student Account", "Student account has been succesfully deleted.", parent=self.root)
             except Exception as es:
-                # Incase of any errors, an error box will be shown to the user which will contain the error code along with the error message
                 messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
     # ------------------------------------------------------------------------------------------------------------------------------------------#
     # Function to fetch the date in the table frame created
@@ -299,12 +273,12 @@ class Update_Student_Profile:
         content = self.student_table.item(cursor_focus)
         data = content["values"]
         self.var_student_ID=(data[0]),
-        self.new_studentID_lbl.config(text=self.var_student_ID)
+        self.new_studentID_lbl.config(text=self.var_student_ID[0])
         self.var_first_name.set(data[1]),
         self.var_last_name.set(data[2]),
-        self.var_date_of_birth.set(data[3]),
-        self.var_student_email.set(data[4]),
         self.var_date_of_admission.set(data[5]),
+        self.var_student_email.set(data[4]),
+        self.var_date_of_birth.set(data[3]),
         self.var_father_name.set(data[6]),
         self.var_father_email.set(data[7]),
         self.var_mother_name.set(data[8]),
@@ -321,112 +295,7 @@ class Update_Student_Profile:
         self.var_father_email.set(""),
         self.var_mother_name.set(""),
         self.var_mother_email.set("")
-# -------------------------------------------------------------------------------------------------------------------------------------------#
-    def capture_face_button(self):
-        # Validation that all fields are filled up
-        if self.var_student_ID=="" or self.var_student_email.get()=="" or self.var_first_name.get()=="" or self.var_last_name.get()=="" or self.var_date_of_admission.get()=="" or self.var_date_of_birth.get()=="" or self.var_father_name.get()=="" or self.var_father_email.get()=="" or self.var_mother_name.get()=="" or self.var_mother_email.get()=="":
-            messagebox.showerror("Error", "All fields are required", parent=self.root)
-        else:
-            # Added a try box to get rid pf any exceptions which might arise
-            try:
-                conn = mysql.connector.connect(host="localhost", username="root", password="utkarshjain120", database="mydb")
-                my_cursor = conn.cursor()
-                # Selected all the data from the database and stored it in the variable myresult
-                my_cursor.execute("SELECT * FROM tbl_student")
-                myresult = my_cursor.fetchall()
-                # We match the images to an id
-                id=0
-                # Therfore, we create a loop to manage the IDs
-                for x in myresult:
-                    id += 1
-                my_cursor.execute("UPDATE tbl_student SET First_Name=%s, Last_Name=%s, Email=%s, date_of_admission=%s, Date_Of_Birth=%s, Father_Name=%s, Father_Email=%s, Mother_Name=%s, Mother_Email=%s WHERE Student_ID=%s",(
-                                                                                                         self.var_first_name.get(),
-                                                                                                         self.var_last_name.get(),
-                                                                                                         self.var_student_email.get(),
-                                                                                                         self.var_date_of_admission.get(),
-                                                                                                         self.var_date_of_birth.get(),
-                                                                                                         self.var_father_name.get(),
-                                                                                                         self.var_father_email.get(),
-                                                                                                         self.var_mother_name.get(),
-                                                                                                         self.var_mother_email.get(),
-                                                                                                         self.var_student_ID==id+1
-                                                                                                        ))
-                conn.commit()
-                self.fetch_data()
-                self.clear_all_button()
-                conn.close()
-                # =========== Load predifined data on face frontals from Open CV. Loading Haarcascade frontal image default =========== #
-                # ideally, we need to give the path of the location of teh haarcascasde file. But in this case, the haarcascade has been 
-                # copied to the code folder and therefore we do not necessaily need to provide a path for it.
-                face_classifier = cv2.CascadeClassifier("C:/Users/utkarshjain120/Desktop/IREG-Image-Registration-Based-Attendance-Mangement-System/haarcascade_frontalface_default.xml") 
-                # ----------------------------------------------------------------------------------------------------------------------- #
-                # Supplementary functions
-                # Cropping the video footage and focussing specifially on the face
-                def face_cropped(img):
-                    # Converting a Blue Green Red BGR image to grayscale form
-                    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-                    faces =  face_classifier.detectMultiScale(gray, 1.3, 5)
-                    # Scaling Factor = 1.3
-                    # Minimum Neighbour = 6
-                
-                    for(x,y,w,h) in faces:
-                        face_cropped = img[y:y+h, x:x+w]
-                        return face_cropped
-               
-            # ---------------------------------------------------------------------------------------------------------------------------- #
 
-
-
-                # The 0 here is an extension for the camera footage. If I want it to read a video file, I need to add in the video 
-                # location. By this line, we are accessing the camera footage
-                cap = cv2.VideoCapture(0)
-
-                img_id = 0
-                while True:
-                    ret, face_Frame = cap.read()
-                    if face_cropped(face_Frame) is not None:
-                        img_id += 1
-                        face = cv2.resize(face_cropped(face_Frame), (450, 450))
-                        face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
-                        file_name_path = "C:/Users/utkarshjain120/Desktop/IREG-Image-Registration-Based-Attendance-Mangement-System/Data/user." + str(id) + "." + str(img_id) + ".jpg"
-                        cv2.imwrite(file_name_path, face)
-                        cv2.putText(face, str(img_id), (50, 50), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 255, 0), 2)
-                        cv2.imshow("Capture Face", face)
-
-                    if cv2.waitKey(1)==13 or int(img_id==100):
-                        break
-                cap.release()
-                cv2.destroyWindow("Capture Face")
-                messagebox.showinfo("Capture Face", "Succesfully captured student face.")
-                self.train_data_button()
-            except Exception as es:
-                messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
-    # ------------------------------------------------------------------------------------------------------------------------ #
-    # Train the classifier using these face captures
-    def train_data_button(self):
-        data_dir = ("C:/Users/utkarshjain120/Desktop/IREG-Image-Registration-Based-Attendance-Mangement-System/Data")
-        path = [os.path.join(data_dir, file) for file in os.listdir(data_dir)]
-
-        faces = []
-        ids = []
-
-        for face in path:
-            img = Image.open(face).convert("L") # Grey Scale Image
-            imageNP = np.array(img, 'uint8') # Converting gray scale image to an array of data type uint
-            face_ID = int(os.path.split(face)[1].split(".")[1])
-
-            faces.append(imageNP)
-            ids.append(face_ID)
-            cv2.imshow("Training", imageNP)
-            cv2.waitKey(1)==13
-        ids = np.array(ids)
-
-        # Train Classifier and Save
-        classifier = cv2.face.LBPHFaceRecognizer_create()
-        classifier.train(faces, ids)
-        classifier.write("C:/Users/utkarshjain120/Desktop/IREG-Image-Registration-Based-Attendance-Mangement-System/Trained_Faces.xml")
-        cv2.destroyWindow("Training")
-        messagebox.showinfo("Training Success", "Datasets have been trained successfully.")
 
 
 # This piece of code helps in calling class Face_Recognition_System

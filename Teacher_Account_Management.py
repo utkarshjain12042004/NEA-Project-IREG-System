@@ -8,7 +8,7 @@ class Teacher_Account_Management:
         self.root = root
         # Setting the dimensions of the window and the point where the window is displayed from
         self.root.geometry("1280x760+0+0")
-        # Setting the property of resizing the widow to false
+        # Setting the property of resizing the window to false
         self.root.resizable(width=False, height=False)
         self.root.title("IREG")
 
